@@ -9330,16 +9330,18 @@ $(function() {
   .sp_cta_a li:first-child { border-left: none; }
   /* 縦の配分: 13 + 27 + 2 + 30 + 5 = 77px（ボタン全体の高さは従来と同じ） */
   .sp_cta_a a { position: relative; padding: 13px 2px 5px; color: #fff; }
-  /* アイコンは固定高ボックスで全ボタン同じ高さに揃える */
+  /* アイコンは共通の固定高ボックス内で上下中央配置 → 4ボタンの中心線が揃う */
   .sp_cta_a .sp_cta_icon {
     height: 27px;
-    font-size: 24px;
+    font-size: 24px;  /* カウンセリング予約(fa-comments)は現状維持 */
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 2px;
   }
-  .sp_cta_a .sp_cta_icon_svg { height: 26px; width: auto; display: block; }
+  .sp_cta_a .cta_saishin .sp_cta_icon,
+  .sp_cta_a .cta_line .sp_cta_icon { font-size: 27px; }
+  .sp_cta_a .sp_cta_icon_svg { height: 29px; width: auto; display: block; }
   /* ラベルは2行分の固定高で上下中央揃え（1行/2行が混在しても揃う） */
   .sp_cta_a .sp_cta_label {
     font-size: 13px;
