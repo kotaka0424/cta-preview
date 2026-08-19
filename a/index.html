@@ -9325,21 +9325,38 @@ $(function() {
 
 @media (max-width: 767px) {
   .sp_cta_a { overflow: visible; background: transparent; box-shadow: none; }
-  .sp_cta_a ul { box-shadow: 0 -2px 10px rgba(89,87,87,0.18); margin-top: 9px; }
+  .sp_cta_a ul { box-shadow: 0 -2px 10px rgba(89,87,87,0.18); margin-top: 11px; }
   .sp_cta_a li { border-left: 2px solid #fff; }
   .sp_cta_a li:first-child { border-left: none; }
-  .sp_cta_a a { position: relative; padding: 17px 2px 9px; color: #fff; }
+  .sp_cta_a a { position: relative; padding: 18px 2px 8px; color: #fff; }
+  /* アイコンは固定高ボックスで全ボタン同じ高さに揃える */
+  .sp_cta_a .sp_cta_icon {
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+  }
+  /* ラベルは2行分の固定高で上下中央揃え（1行/2行が混在しても揃う） */
+  .sp_cta_a .sp_cta_label {
+    font-size: 11px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .sp_cta_a .sp_cta_tag {
     position: absolute;
-    top: -9px; left: 50%;
+    top: -11px; left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
     background: #fff;
-    font-size: 8.5px;
+    font-size: 9.5px;
     font-weight: 500;
     line-height: 1;
-    padding: 4px 7px;
+    padding: 4px 8px;
     border-radius: 999px;
+    border: 1px solid;  /* 枠線色は各ボタン色(color)を継承 */
     box-shadow: 0 1px 3px rgba(89,87,87,0.25);
   }
   .sp_cta_a .cta_shoshin { background: #BA6161; }
@@ -9349,7 +9366,7 @@ $(function() {
   .sp_cta_a .cta_biyo { background: #a68b62; }
   .sp_cta_a .cta_biyo .sp_cta_tag { color: #a68b62; }
   .sp_cta_a .cta_line { background: #06C755; }
-  .sp_cta_a .cta_line .sp_cta_tag { color: #06A94D; }
+  .sp_cta_a .cta_line .sp_cta_tag { color: #06A94D; border-color: #06C755; }
 }
 </style>
 
