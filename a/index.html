@@ -9328,23 +9328,27 @@ $(function() {
   .sp_cta_a ul { box-shadow: 0 -2px 10px rgba(89,87,87,0.18); margin-top: 11px; }
   .sp_cta_a li { border-left: 2px solid #fff; }
   .sp_cta_a li:first-child { border-left: none; }
-  .sp_cta_a a { position: relative; padding: 18px 2px 8px; color: #fff; }
+  /* 縦の配分: 13 + 27 + 2 + 30 + 5 = 77px（ボタン全体の高さは従来と同じ） */
+  .sp_cta_a a { position: relative; padding: 13px 2px 5px; color: #fff; }
   /* アイコンは固定高ボックスで全ボタン同じ高さに揃える */
   .sp_cta_a .sp_cta_icon {
-    height: 18px;
+    height: 27px;
+    font-size: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
+  .sp_cta_a .sp_cta_icon_svg { height: 26px; width: auto; display: block; }
   /* ラベルは2行分の固定高で上下中央揃え（1行/2行が混在しても揃う） */
   .sp_cta_a .sp_cta_label {
-    font-size: 11px;
+    font-size: 13px;
     height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+  .sp_cta_a .cta_biyo .sp_cta_label { font-size: 11px; }
   .sp_cta_a .sp_cta_tag {
     position: absolute;
     top: -11px; left: 50%;
@@ -9359,23 +9363,23 @@ $(function() {
     border: 1px solid;  /* 枠線色は各ボタン色(color)を継承 */
     box-shadow: 0 1px 3px rgba(89,87,87,0.25);
   }
-  .sp_cta_a .cta_shoshin { background: #BA6161; }
+  .sp_cta_a .cta_shoshin { background: #BA6161; --cta-bg: #BA6161; }
   .sp_cta_a .cta_shoshin .sp_cta_tag { color: #BA6161; }
-  .sp_cta_a .cta_saishin { background: #0094B2; }
+  .sp_cta_a .cta_saishin { background: #0094B2; --cta-bg: #0094B2; }
   .sp_cta_a .cta_saishin .sp_cta_tag { color: #0094B2; }
-  .sp_cta_a .cta_biyo { background: #a68b62; }
+  .sp_cta_a .cta_biyo { background: #a68b62; --cta-bg: #a68b62; }
   .sp_cta_a .cta_biyo .sp_cta_tag { color: #a68b62; }
-  .sp_cta_a .cta_line { background: #06C755; }
+  .sp_cta_a .cta_line { background: #06C755; --cta-bg: #06C755; }
   .sp_cta_a .cta_line .sp_cta_tag { color: #06A94D; border-color: #06C755; }
 }
 </style>
 
 <div class="sp_cta sp_cta_a">
   <ul>
-    <li class="cta_shoshin"><a href="https://ebinahifu.mdja.jp/" target="_blank" rel="noopener"><span class="sp_cta_tag">初診の方のみ</span><i class="fas fa-calendar-check sp_cta_icon"></i><span class="sp_cta_label">新患時間予約</span></a></li>
+    <li class="cta_shoshin"><a href="https://ebinahifu.mdja.jp/" target="_blank" rel="noopener"><span class="sp_cta_tag">初診の方のみ</span><span class="sp_cta_icon"><svg class="sp_cta_icon_svg" viewBox="0 0 26 26" aria-hidden="true" focusable="false"><rect x="1.5" y="4" width="19" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><line x1="1.5" y1="9.5" x2="20.5" y2="9.5" stroke="currentColor" stroke-width="2"/><line x1="6.5" y1="1.5" x2="6.5" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="15.5" y1="1.5" x2="15.5" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="19.5" cy="19.5" r="6.5" fill="var(--cta-bg, #333)"/><circle cx="19.5" cy="19.5" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/><polyline points="19.5,16.9 19.5,19.5 21.5,20.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="sp_cta_label">新患時間予約</span></a></li>
     <li class="cta_saishin"><a href="https://ebinahifu.mdja.jp/" target="_blank" rel="noopener"><span class="sp_cta_tag">受診歴のある方</span><i class="fas fa-laptop sp_cta_icon"></i><span class="sp_cta_label">Web受付</span></a></li>
     <li class="cta_biyo"><a href="https://ebinahifu.mdja.jp/g/2" target="_blank" rel="noopener"><span class="sp_cta_tag">美容皮膚科</span><i class="fas fa-comments sp_cta_icon"></i><span class="sp_cta_label">カウンセリング<br>予約</span></a></li>
-    <li class="cta_line"><a href="https://liff.line.me/2009055423-gTRT6NAn/landing?follow=%40577oibpi&lp=JVPaRu&liff_id=2009055423-gTRT6NAn" target="_blank" rel="noopener"><span class="sp_cta_tag">最新・お得情報</span><i class="fab fa-line sp_cta_icon"></i><span class="sp_cta_label">LINE登録</span></a></li>
+    <li class="cta_line"><a href="https://liff.line.me/2009055423-gTRT6NAn/landing?follow=%40577oibpi&lp=JVPaRu&liff_id=2009055423-gTRT6NAn" target="_blank" rel="noopener"><span class="sp_cta_tag">最新・お得情報</span><span class="sp_cta_icon"><svg class="sp_cta_icon_svg" viewBox="0 0 26 26" aria-hidden="true" focusable="false"><rect x="1.5" y="4" width="19" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><line x1="1.5" y1="9.5" x2="20.5" y2="9.5" stroke="currentColor" stroke-width="2"/><line x1="6.5" y1="1.5" x2="6.5" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="15.5" y1="1.5" x2="15.5" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="19.5" cy="19.5" r="6.5" fill="var(--cta-bg, #333)"/><circle cx="19.5" cy="19.5" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/><polyline points="19.5,16.9 19.5,19.5 21.5,20.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="sp_cta_label">LINE登録</span></a></li>
   </ul>
 </div>
 
